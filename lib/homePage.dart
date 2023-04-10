@@ -21,13 +21,13 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Obx(() {
-      if (apiConrroller.Users.isEmpty) {
+      if (apiConrroller.userss.isEmpty) {
         return const Center(
           child: CircularProgressIndicator(),
         );
       }
       return Center(
-        child: Text(apiConrroller.Users.value[0].name.toString()),
+        child: Text(apiConrroller.userss.value[0].name.toString()),
       );
     });
   }

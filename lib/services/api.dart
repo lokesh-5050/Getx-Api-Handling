@@ -9,8 +9,12 @@ class ApiServices {
     List<dynamic>? data = await handleRequest(
         "GET", "https://jsonplaceholder.typicode.com/users", dio);
     print("data in controlelr => $data");
-    return data!
-        .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
-        .toList();
+    if (data != null) {
+      return data
+          .map((e) => UserModel.fromJson(e as Map<String, dynamic>))
+          .toList();
+    } else {
+      return [];
+    }
   }
 }
